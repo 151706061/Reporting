@@ -5,6 +5,7 @@ import unittest
 from  __main__ import vtk, qt, ctk, slicer
 import time
 import os, sys
+import reportingmoduledatapaths as datapaths
 
 import DICOMLib # for loading a volume on AIM import
 
@@ -26,9 +27,7 @@ class ReportingTesting(unittest.TestCase):
     # l = slicer.modulelogic.vtkSlicerReportingModuleLogic()
     l = slicer.modules.reporting.logic() 
 
-    # testDataPath = os.path.normpath(os.path.join(os.path.realpath(__file__), "..", "..", "Prototype/TestData/DICOM.CT/")   
-    print "Reporting round trip test, current working directory = ",os.getcwd()
-    testDataPath = os.path.join(os.getcwd(),"Testing/Temporary/DICOM.CT")
+    testDataPath = os.path.join(datapaths.input, "DICOM.CT")
     # testDataPath = "/projects/birn/nicole/Slicer4/Reporting/Prototype/TestData/DICOM.CT"
     print "test data path = ",testDataPath
  
